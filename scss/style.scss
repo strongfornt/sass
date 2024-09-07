@@ -1,0 +1,90 @@
+@import "partial/section1";
+
+$max-width: 1200px;
+$bg-color: #fff;
+$padding: 20px;
+
+body {
+  padding: 20px;
+  margin: 0;
+  max-width: $max-width;
+  margin: auto;
+}
+
+.section1-container {
+  display: grid;
+  gap: 16px;
+  margin-top: 50px;
+  grid-template-columns: repeat(3, 1fr);
+
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.box1,
+.box2,
+.box3 {
+  @extend .box;
+  background-color: $bg-color;
+  padding: $padding;
+
+  h1 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.65);
+  }
+
+  div {
+    display: flex;
+    gap: 12px;
+  }
+
+  div span {
+    color: rgba(0, 0, 0, 0.75);
+    font-weight: bold;
+  }
+}
+
+
+.section2-container {
+    margin: 60px 0;
+    h1 {
+        text-align: center;
+        margin-bottom:40px;
+        color:rgba(0, 0, 0, 0.85) ;
+    }
+
+    .marquee {
+        padding: 20px;
+        overflow: hidden;
+        .marquee-content {
+            display: inline-flex;
+            animation: marquee 30s linear infinite;
+        }
+    
+        img {
+            margin-right:100px ;
+        }
+    
+        @keyframes marquee {
+            0% {
+              transform: translateX(0%);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+    }
+    
+
+}
+
+
